@@ -16,4 +16,10 @@ public class GameTests
     {
         Assert.That(Rules.NextState(CellState.Alive, 2), Is.EqualTo(CellState.Alive));
     }
+
+    [Test]
+    public void DeadCellWithTwoNeighborsStaysDead()
+    {
+        Assert.That(Rules.NextState(CellState.Dead, 2), Is.EqualTo(CellState.Dead));
+    }
 }
