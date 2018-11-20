@@ -7,8 +7,11 @@ using UnityEngine.XR;
 
 public class LifeView : MonoBehaviour
 {
+    [SerializeField] private GameObject cellPrefab;
+
     private bool running = true;
     private const float TimeStep = .5f;
+    private const float CellSpacing = 1.05f;
     private GameGrid grid = new GameGrid();
 
     private void Start()
@@ -33,7 +36,9 @@ public class LifeView : MonoBehaviour
         Application.Quit();
     }
 
-    private void RenderGrid(GameGrid gameGrid)
+    private void RenderGrid(GameGrid grid)
     {
-    }    
+        foreach (var cell in grid.LivingCells())
+            Instantiate(cellPrefab, new Vector3(cell.x * CellSpacing, 0, cell.y * CellSpacing), Quaternion.identity);
+    }
 }

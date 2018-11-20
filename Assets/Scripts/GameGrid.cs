@@ -1,5 +1,6 @@
 ﻿// 
 
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -72,6 +73,11 @@ namespace GameOfLife
                 foreach (var c in AdjacentTo(cell))
                     candidates.Add(c);
             return candidates;
+        }
+
+        public IEnumerable<Vector2> LivingCells()
+        {
+            return livingCells;
         }
     }
 }
