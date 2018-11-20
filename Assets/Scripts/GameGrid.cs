@@ -10,8 +10,12 @@ namespace GameOfLife
     {
         private readonly HashSet<Vector2> livingCells = new HashSet<Vector2>();
 
-        public GameGrid()
+        public GameGrid(params Vector2[] liveCells)
         {
+            foreach (var l in liveCells)
+            {
+                AddLivingCell(l);
+            }
         }
 
         public int CellCount()

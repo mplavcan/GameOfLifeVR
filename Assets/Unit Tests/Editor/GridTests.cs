@@ -55,23 +55,23 @@ public class GridTests
     [Test]
     public void NeighborhoodQueryFindsAllNeighbors()
     {
-        var grid = new GameGrid();
-        grid.AddLivingCell(new Vector2(2, 7));
-        grid.AddLivingCell(new Vector2(3, 6));
-        grid.AddLivingCell(new Vector2(4, 6));
-        grid.AddLivingCell(new Vector2(4, 7));
+        var grid = new GameGrid(
+            new Vector2(2, 7),
+            new Vector2(3, 6),
+            new Vector2(4, 6),
+            new Vector2(4, 7));
         Assert.That(grid.NeighborCount(new Vector2(3, 7)), Is.EqualTo(4));
     }
 
     [Test]
     public void NeighborhoodQueryDoesNotFindOwnCoordinate()
     {
-        var grid = new GameGrid();
-        grid.AddLivingCell(new Vector2(3, 7));
-        grid.AddLivingCell(new Vector2(2, 7));
-        grid.AddLivingCell(new Vector2(3, 6));
-        grid.AddLivingCell(new Vector2(4, 6));
-        grid.AddLivingCell(new Vector2(4, 7));
+        var grid = new GameGrid(
+            new Vector2(3, 7),
+            new Vector2(2, 7),
+            new Vector2(3, 6),
+            new Vector2(4, 6),
+            new Vector2(4, 7));
         Assert.That(grid.NeighborCount(new Vector2(3, 7)), Is.EqualTo(4));
     }
 }
