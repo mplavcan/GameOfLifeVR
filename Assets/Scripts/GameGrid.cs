@@ -7,7 +7,7 @@ namespace GameOfLife
 {
     public class GameGrid
     {
-        private readonly List<Vector2> livingCells = new List<Vector2>();
+        private readonly HashSet<Vector2> livingCells = new HashSet<Vector2>();
 
         public GameGrid()
         {
@@ -26,6 +26,11 @@ namespace GameOfLife
         public CellState CellStateAt(Vector2 location)
         {
             return livingCells.Contains(location) ? CellState.Alive : CellState.Dead;
+        }
+
+        public int NeighborCount(Vector2 center)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
