@@ -2,33 +2,35 @@
 
 using UnityEngine;
 
-public class FallingCell : MonoBehaviour
+namespace GameOfLife
 {
-    [SerializeField] private Color color;
-
-    private const int VanishingThreshold = -50;
-    private GameObject cube;
-
-    void Start()
+    public class FallingCell : MonoBehaviour
     {
-        FadeColorWithDepth();
-    }
+        [SerializeField] private Color color;
 
-    void Update()
-    {
-        FadeColorWithDepth();
-        RemoveFallenCell();
-    }
+        private const int VanishingThreshold = -50;
 
-    private void FadeColorWithDepth()
-    {
-        GetComponent<MeshRenderer>().material.color =
-            color * (1 - (transform.position.y / VanishingThreshold));
-    }
+        private void Start()
+        {
+            FadeColorWithDepth();
+        }
 
-    private void RemoveFallenCell()
-    {
-        if (transform.position.y < VanishingThreshold)
-            Destroy(gameObject);
+        private void Update()
+        {
+            FadeColorWithDepth();
+            RemoveFallenCell();
+        }
+
+        private void FadeColorWithDepth()
+        {
+            GetComponent<MeshRenderer>().material.color =
+                color * (1 - transform.position.y / VanishingThreshold);
+        }
+
+        private void RemoveFallenCell()
+        {
+            if (transform.position.y < VanishingThreshold)
+                Destroy(gameObject);
+        }
     }
 }
