@@ -26,4 +26,12 @@ public class GridTests
         var grid = new GameGrid();
         Assert.That(grid.CellStateAt(Vector2.zero), Is.EqualTo(CellState.Dead));
     }
+
+    [Test]
+    public void GridCellStateQueryCanFindLiveCells()
+    {
+        var grid = new GameGrid();
+        grid.AddLivingCell(Vector2.one);
+        Assert.That(grid.CellStateAt(Vector2.one), Is.EqualTo(CellState.Alive));
+    }
 }
