@@ -52,7 +52,17 @@ namespace GameOfLife
 
         public static IEnumerable<Vector2> AdjacentTo(Vector2 center)
         {
-            throw new System.NotImplementedException();
+            return new List<Vector2>
+            {
+                center + Vector2.up,
+                center + Vector2.down,
+                center + Vector2.right,
+                center + Vector2.left,
+                center + Vector2.up + Vector2.left,
+                center + Vector2.up + Vector2.right,
+                center + Vector2.down + Vector2.left,
+                center + Vector2.down + Vector2.right,
+            };
         }
     }
 }
