@@ -74,4 +74,18 @@ public class GridTests
             new Vector2(4, 7));
         Assert.That(grid.NeighborCount(new Vector2(3, 7)), Is.EqualTo(4));
     }
+
+    [Test]
+    public void NeighborhoodQueryDoesNotFindsFurtherCells()
+    {
+        var grid = new GameGrid(
+            new Vector2(3, 7),
+            new Vector2(2, 7),
+            new Vector2(3, 6),
+            new Vector2(4, 6),
+            new Vector2(4, 7),
+            new Vector2(1, 7),
+            new Vector2(0, 0));
+        Assert.That(grid.NeighborCount(new Vector2(3, 7)), Is.EqualTo(4));
+    }
 }
