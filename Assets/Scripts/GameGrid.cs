@@ -44,7 +44,7 @@ namespace GameOfLife
 
         public GameGrid NextGrid()
         {
-            throw new System.NotImplementedException();
+            return new GameGrid();
         }
     }
 }

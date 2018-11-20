@@ -5,7 +5,6 @@ using NUnit.Framework;
 
 public class GridTimeTests
 {
-
     [Test]
     public void GridCanGenerateNewGrid()
     {
