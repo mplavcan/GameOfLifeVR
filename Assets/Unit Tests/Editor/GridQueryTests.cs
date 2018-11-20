@@ -4,7 +4,7 @@ using GameOfLife;
 using NUnit.Framework;
 using UnityEngine;
 
-public class GridTests
+public class GridQueryTests
 {
     [Test]
     public void GridBeginsEmpty()
