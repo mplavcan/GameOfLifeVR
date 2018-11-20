@@ -13,7 +13,7 @@ namespace GameOfLife
         public static CellState NextState(CellState currentState, int numNeighbors)
         {
             if(numNeighbors == 2)
-                return CellState.Alive;
+                return currentState;
             return CellState.Dead;
         }
     }
