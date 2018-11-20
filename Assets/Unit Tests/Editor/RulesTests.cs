@@ -3,7 +3,7 @@
 using GameOfLife;
 using NUnit.Framework;
 
-public class GameTests
+public class RulesTests
 {
     [Test]
     public void DeadCellWithNoNeighborsStaysDead()
