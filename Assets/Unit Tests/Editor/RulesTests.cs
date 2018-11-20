@@ -3,9 +3,10 @@
 // Public domain: Reuse and modification permitted without attribution
 // 
 
+using GameOfLife;
 using NUnit.Framework;
 
-namespace GameOfLife
+namespace GameTests
 {
     public class RulesTests
     {
