@@ -12,11 +12,12 @@ namespace GameOfLife
     {
         public static CellState NextState(CellState currentState, int numNeighbors)
         {
-            if (numNeighbors == 3)
-                return CellState.Alive;
-            if (numNeighbors == 2)
-                return currentState;
-            return CellState.Dead;
+            switch (numNeighbors)
+            {
+                case 2: return currentState;
+                case 3: return CellState.Alive;
+                default: return CellState.Dead;
+            }
         }
     }
 }
