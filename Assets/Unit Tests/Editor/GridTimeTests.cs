@@ -59,7 +59,7 @@ public class GridTimeTests
         Assert.That(grid.PotentialLivingCells().Count, Is.EqualTo(25));
     }
 
-    [Ignore("Pending candidate empty cell implementation")]
+    [Test]
     public void NewGridAddsBirthingCells()
     {
         var grid = new GameGrid(
