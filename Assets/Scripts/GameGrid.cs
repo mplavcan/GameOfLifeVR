@@ -67,7 +67,11 @@ namespace GameOfLife
 
         public HashSet<Vector2> PotentialLivingCells()
         {
-            throw new System.NotImplementedException();
+            var candidates = new HashSet<Vector2>(livingCells);
+            foreach (var cell in livingCells)
+                foreach (var c in AdjacentTo(cell))
+                    candidates.Add(c);
+            return candidates;
         }
     }
 }
