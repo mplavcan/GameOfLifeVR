@@ -1,12 +1,13 @@
 ﻿// 
 
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace GameOfLife
 {
     public class GameGrid
     {
-        private int numCells = 0;
+        private readonly List<Vector2> livingCells = new List<Vector2>();
 
         public GameGrid()
         {
@@ -14,17 +15,17 @@ namespace GameOfLife
 
         public int CellCount()
         {
-            return numCells;
+            return livingCells.Count;
         }
 
         public void AddLivingCell(Vector2 location)
         {
-            numCells++;
+            livingCells.Add(location);
         }
 
         public CellState CellStateAt(Vector2 location)
         {
-            return CellState.Dead;
+            return livingCells.Contains(location) ? CellState.Alive : CellState.Dead;
         }
     }
 }
