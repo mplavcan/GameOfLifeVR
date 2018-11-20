@@ -4,7 +4,8 @@ namespace GameOfLife
 {
     public enum CellState
     {
-        Dead
+        Dead,
+        Alive
     }
 
     public static class Rules
