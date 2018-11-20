@@ -6,17 +6,20 @@ namespace GameOfLife
 {
     public class GameGrid
     {
+        private int numCells = 0;
+
         public GameGrid()
         {
         }
 
         public int CellCount()
         {
-            return 0;
+            return numCells;
         }
 
         public void AddLivingCell(Vector2 location)
         {
+            numCells++;
         }
     }
 }
