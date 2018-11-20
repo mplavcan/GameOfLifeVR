@@ -1,5 +1,6 @@
 ﻿//
 
+using System.Collections.Generic;
 using GameOfLife;
 using NUnit.Framework;
 using UnityEngine;
@@ -30,6 +31,21 @@ public class GridTimeTests
             new Vector2(1, 1),
             new Vector2(1, 2));
         Assert.That(grid.NextGrid().CellCount(), Is.EqualTo(0));
+    }
+    
+    [Test]
+    public void GridCanListNeighborLocations()
+    {
+        Assert.That(GameGrid.AdjacentTo(Vector2.one), Is.EquivalentTo(new List<Vector2>() {
+            new Vector2(0, 0),
+            new Vector2(1, 0),
+            new Vector2(2, 0),
+            new Vector2(0, 1),
+            new Vector2(2, 1),
+            new Vector2(0, 2),
+            new Vector2(1, 2),
+            new Vector2(2, 2),
+        }));
     }
 
     [Ignore("Pending candidate empty cell implementation")]

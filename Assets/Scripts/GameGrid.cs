@@ -49,5 +49,10 @@ namespace GameOfLife
                 Rules.NextState(CellStateAt(cell), NeighborCount(cell)) == CellState.Alive
             ).ToArray());
         }
+
+        public static IEnumerable<Vector2> AdjacentTo(Vector2 center)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
