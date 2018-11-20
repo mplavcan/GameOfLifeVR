@@ -44,7 +44,7 @@ namespace GameOfLife
 
         public GameGrid NextGrid()
         {
-            return new GameGrid();
+            return new GameGrid(this.livingCells.ToArray());
         }
     }
 }
