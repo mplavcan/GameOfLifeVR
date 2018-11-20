@@ -24,7 +24,7 @@ namespace GameOfLife
 
         public CellState CellStateAt(Vector2 location)
         {
-            throw new System.NotImplementedException();
+            return CellState.Dead;
         }
     }
 }
