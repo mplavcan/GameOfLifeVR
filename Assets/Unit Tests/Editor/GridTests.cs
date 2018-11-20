@@ -52,11 +52,22 @@ public class GridTests
         Assert.That(grid.CellCount(), Is.EqualTo(1));
     }
 
-
     [Test]
     public void NeighborhoodQueryFindsAllNeighbors()
     {
         var grid = new GameGrid();
+        grid.AddLivingCell(new Vector2(2, 7));
+        grid.AddLivingCell(new Vector2(3, 6));
+        grid.AddLivingCell(new Vector2(4, 6));
+        grid.AddLivingCell(new Vector2(4, 7));
+        Assert.That(grid.NeighborCount(new Vector2(3, 7)), Is.EqualTo(4));
+    }
+
+    [Test]
+    public void NeighborhoodQueryDoesNotFindOwnCoordinate()
+    {
+        var grid = new GameGrid();
+        grid.AddLivingCell(new Vector2(3, 7));
         grid.AddLivingCell(new Vector2(2, 7));
         grid.AddLivingCell(new Vector2(3, 6));
         grid.AddLivingCell(new Vector2(4, 6));
