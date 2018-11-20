@@ -1,6 +1,7 @@
 ﻿// 
 
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace GameOfLife
@@ -30,7 +31,8 @@ namespace GameOfLife
 
         public int NeighborCount(Vector2 center)
         {
-            throw new System.NotImplementedException();
+            var neighborThreshold = Mathf.Sqrt(2) + Mathf.Epsilon;
+            return livingCells.Count(candidate => (candidate - center).magnitude <= neighborThreshold);
         }
     }
 }
