@@ -1,5 +1,7 @@
 ﻿// 
 
+using UnityEngine;
+
 namespace GameOfLife
 {
     public class GameGrid
@@ -10,7 +12,11 @@ namespace GameOfLife
 
         public int CellCount()
         {
-            throw new System.NotImplementedException();
+            return 0;
+        }
+
+        public void AddLivingCell(Vector2 location)
+        {
         }
     }
 }
