@@ -22,4 +22,10 @@ public class GameTests
     {
         Assert.That(Rules.NextState(CellState.Dead, 2), Is.EqualTo(CellState.Dead));
     }
+
+    [Test]
+    public void DeadCellWithThreeNeighborsBirths()
+    {
+        Assert.That(Rules.NextState(CellState.Dead, 3), Is.EqualTo(CellState.Alive));
+    }
 }
