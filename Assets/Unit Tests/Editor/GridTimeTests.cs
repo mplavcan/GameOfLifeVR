@@ -23,7 +23,6 @@ public class GridTimeTests
         Assert.That(grid.NextGrid().CellCount(), Is.EqualTo(4));
     }
 
-
     [Test]
     public void NewGridRemovesDyingCells()
     {
@@ -31,5 +30,15 @@ public class GridTimeTests
             new Vector2(1, 1),
             new Vector2(1, 2));
         Assert.That(grid.NextGrid().CellCount(), Is.EqualTo(0));
+    }
+
+    [Test]
+    public void NewGridAddsBirthingCells()
+    {
+        var grid = new GameGrid(
+            new Vector2(1, 1),
+            new Vector2(1, 2),
+            new Vector2(2, 1));
+        Assert.That(grid.NextGrid().CellStateAt(new Vector2(2, 2)), Is.EqualTo(CellState.Alive));
     }
 }
