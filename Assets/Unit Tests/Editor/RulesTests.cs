@@ -1,4 +1,7 @@
-﻿// 
+﻿// GameofLifeVR
+// Matt Plavcan (@mplavcan)
+// Public domain: Reuse and modification permitted without attribution
+// 
 
 using NUnit.Framework;
 

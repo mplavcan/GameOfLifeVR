@@ -1,6 +1,8 @@
-﻿// 
+﻿// GameofLifeVR
+// Matt Plavcan (@mplavcan)
+// Public domain: Reuse and modification permitted without attribution
+// 
 
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -14,9 +16,7 @@ namespace GameOfLife
         public GameGrid(params Vector2[] liveCells)
         {
             foreach (var l in liveCells)
-            {
                 AddLivingCell(l);
-            }
         }
 
         public int CellCount()
