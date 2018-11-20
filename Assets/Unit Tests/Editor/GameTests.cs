@@ -1,12 +1,14 @@
 ﻿// 
 
+using GameOfLife;
 using NUnit.Framework;
 
 public class GameTests
 {
     [Test]
-    public void GameTestsSimplePasses()
+    public void DeadCellWithNoNeighborsStaysDead()
     {
-        Assert.That(true, Is.EqualTo(false));
+        Assert.That(Rules.NextState(CellState.Dead, 0), Is.EqualTo(CellState.Dead));
     }
 }
+
