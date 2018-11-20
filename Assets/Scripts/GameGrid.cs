@@ -44,7 +44,10 @@ namespace GameOfLife
 
         public GameGrid NextGrid()
         {
-            return new GameGrid(this.livingCells.ToArray());
+            return new GameGrid(
+                this.livingCells.Where(cell =>
+                Rules.NextState(CellStateAt(cell), NeighborCount(cell)) == CellState.Alive
+            ).ToArray());
         }
     }
 }
