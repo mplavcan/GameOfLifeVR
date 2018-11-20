@@ -41,5 +41,10 @@ namespace GameOfLife
                 candidate != center
             );
         }
+
+        public GameGrid NextGrid()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
