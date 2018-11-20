@@ -21,5 +21,10 @@ namespace GameOfLife
         {
             numCells++;
         }
+
+        public CellState CellStateAt(Vector2 location)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

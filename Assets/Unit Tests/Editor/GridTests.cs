@@ -13,10 +13,17 @@ public class GridTests
     }
 
     [Test]
-    public void GridCanAddLivingCells()
+    public void GridCanAddALivingCell()
     {
         var grid = new GameGrid();
         grid.AddLivingCell(Vector2.zero);
         Assert.That(grid.CellCount(), Is.EqualTo(1));
+    }
+
+    [Test]
+    public void GridCanQueryCellState()
+    {
+        var grid = new GameGrid();
+        Assert.That(grid.CellStateAt(Vector2.zero), Is.EqualTo(CellState.Dead));
     }
 }
