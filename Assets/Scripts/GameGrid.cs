@@ -32,7 +32,10 @@ namespace GameOfLife
         public int NeighborCount(Vector2 center)
         {
             var neighborThreshold = Mathf.Sqrt(2) + Mathf.Epsilon;
-            return livingCells.Count(candidate => (candidate - center).magnitude <= neighborThreshold);
+            return livingCells.Count(candidate =>
+                (candidate - center).magnitude <= neighborThreshold &&
+                candidate != center
+            );
         }
     }
 }
