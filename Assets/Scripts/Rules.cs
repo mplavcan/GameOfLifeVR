@@ -11,7 +11,7 @@ namespace GameOfLife
     {
         public static CellState NextState(CellState currentState, int numNeighbors)
         {
-            throw new System.NotImplementedException();
+            return CellState.Dead;
         }
     }
 }
