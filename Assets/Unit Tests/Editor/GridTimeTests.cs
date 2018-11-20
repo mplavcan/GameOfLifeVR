@@ -48,6 +48,17 @@ public class GridTimeTests
         }));
     }
 
+    [Test]
+    public void GridConsidersLargerSurroundingCellBoundary()
+    {
+        var grid = new GameGrid(
+            new Vector2(1, 1),
+            new Vector2(-1, -1),
+            new Vector2(-1, 1),
+            new Vector2(1, -1));
+        Assert.That(grid.PotentialLivingCells().Count, Is.EqualTo(25));
+    }
+
     [Ignore("Pending candidate empty cell implementation")]
     public void NewGridAddsBirthingCells()
     {

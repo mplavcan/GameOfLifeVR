@@ -64,5 +64,10 @@ namespace GameOfLife
                 center + Vector2.down + Vector2.right,
             };
         }
+
+        public HashSet<Vector2> PotentialLivingCells()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
