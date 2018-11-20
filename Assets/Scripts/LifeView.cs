@@ -30,15 +30,24 @@ public class LifeView : MonoBehaviour
         while (running)
         {
             yield return new WaitForSeconds(TimeStep);
-            grid = grid.NextGrid();
             RenderGrid(grid);
+            grid = grid.CellCount() == 0 ? Rpentomino() : grid.NextGrid();
         }
-        Application.Quit();
     }
 
     private void RenderGrid(GameGrid grid)
     {
         foreach (var cell in grid.LivingCells())
             Instantiate(cellPrefab, new Vector3(cell.x * CellSpacing, 0, cell.y * CellSpacing), Quaternion.identity);
+    }
+
+    private GameGrid Rpentomino()
+    {
+        return new GameGrid(
+            new Vector2(0, 0),
+            new Vector2(1, 0),
+            new Vector2(0, -1),
+            new Vector2(0, 1),
+            new Vector2(-1, 1));
     }
 }
