@@ -32,12 +32,12 @@ namespace GameOfLife
             while (running)
             {
                 yield return new WaitForSeconds(TimeStep);
-                RenderGrid(grid);
+                RenderGrid();
                 grid = grid.CellCount() == 0 ? Rpentomino() : grid.NextGrid();
             }
         }
 
-        private void RenderGrid(GameGrid grid)
+        private void RenderGrid()
         {
             foreach (var cell in grid.LivingCells())
                 Instantiate(cellPrefab, new Vector3(cell.x * CellSpacing, 0, cell.y * CellSpacing), Quaternion.identity,
