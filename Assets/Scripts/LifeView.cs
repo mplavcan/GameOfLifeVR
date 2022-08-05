@@ -5,7 +5,6 @@
 
 using System.Collections;
 using UnityEngine;
-using UnityEngine.XR;
 
 namespace GameOfLife
 {
@@ -20,7 +19,6 @@ namespace GameOfLife
 
         private void Start()
         {
-            InputTracking.Recenter();
             StartCoroutine(LifeAnimator());
         }
 
