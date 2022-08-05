@@ -8,4 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GameOfLifeView.unity
     guid: 38720df491b25a3479c1478fc6d0f2d7
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: cef2b23612b8cab41914a0c926f70e6a,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 4e29bae74e7bfb74790f04a5b54142f0,
+      type: 2}
