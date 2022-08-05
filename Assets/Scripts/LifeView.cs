@@ -33,7 +33,7 @@ namespace GameOfLife
             {
                 yield return new WaitForSeconds(TimeStep);
                 RenderGrid();
-                grid = grid.CellCount() == 0 ? Rpentomino() : grid.NextGrid();
+                grid = grid.CellCount() == 0 ? RPentomino() : grid.NextGrid();
             }
         }
 
@@ -44,7 +44,7 @@ namespace GameOfLife
                     transform);
         }
 
-        private static GameGrid Rpentomino()
+        private static GameGrid RPentomino()
         {
             return new GameGrid(
                 new Vector2(0, 0),
